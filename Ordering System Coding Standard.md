@@ -1,16 +1,22 @@
-Transitions
+#Ordering System Coding Standard
+
+#### Transitions
+
 https://ricostacruz.com/jquery.transit/#top
 
-// CSS guideline Best practices
-https://rscss.io/components.html
-https://sass-lang.com/guide
+#### Developers Basic Guides
 
-//Data Graph for demographic or Menu
-https://observablehq.com/@d3/zoomable-treemap
+http://192.168.149.53:1627/guide/
 
-Page ProgressBar 
+#### Data Graph for demographic or Menu
+
+`https://observablehq.com/@d3/zoomable-treemap`
+
+#### Page ProgressBar 
+
 https://ricostacruz.com/nprogress/
 
 
-Web Socket using Socket.io
+#### Web Socket using Socket.io
+
 https://github.com/googollee/go-socket.io
