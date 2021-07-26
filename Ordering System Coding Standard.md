@@ -6,7 +6,7 @@ https://ricostacruz.com/jquery.transit/#top
 
 #### Developers Basic Guides
 
-http://192.168.149.53:1627/guide/
+https://developersguide.netlify.app
 
 #### Data Graph for demographic or Menu
 

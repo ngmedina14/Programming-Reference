@@ -4,7 +4,7 @@
 https://d3js.org
 
 #### Developers basics guide
-http://192.168.149.53:1627/guide/
+https://developersguide.netlify.app
 
 #### Data Graph for demographic or Menu
 `https://observablehq.com/@d3/zoomable-treemap`
