@@ -24,7 +24,9 @@ Word should start with Lowercase letter and use Underscore _ for space
 ##### files
 - **some_example.go**
 <br>
+
 #### Naming type and struct and func uses CamelCase
+
 Every words should start with Uppercase letter and should not use space 
 
 ```
