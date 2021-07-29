@@ -25,3 +25,10 @@ Every words should start with Uppercase letter and should not use space
 **SomeExample** string
 **OtherExampleID** string
 ###### }
+
+##uadmin Custom UI file location
+######template/
+- **custom-ui.html**
+
+######view/
+- **backend-custom-ui.go**
