@@ -26,9 +26,9 @@ Every words should start with Uppercase letter and should not use space
 **OtherExampleID** string
 ###### }
 
-##uadmin Custom UI file location
-######template/
+## uadmin Custom UI file location
+###### template/
 - **custom-ui.html**
 
-######view/
+###### view/
 - **backend-custom-ui.go**
