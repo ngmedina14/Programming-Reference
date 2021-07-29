@@ -13,21 +13,33 @@
 
 	func DBConfig()
 
+
+------------
+
+
+
 ## Naming Standard and when 2 words
 #### Naming files uses snake_case
 Word should start with Lowercase letter and use Underscore _ for space
 ##### files
-**some_example.go**
+- **some_example.go**
 <br>
 #### Naming type and struct and func uses CamelCase
 Every words should start with Uppercase letter and should not use space 
-##### type NameSample struct{
 
-**SomeExample** string
-<br>
-**OtherExampleID** string
+```
+type NameSample struct{
 
-##### }
+SomeExample string
+OtherExampleID string
+
+ } 
+```
+
+
+------------
+
+
 
 ## uadmin Custom UI file location
 ###### template/
