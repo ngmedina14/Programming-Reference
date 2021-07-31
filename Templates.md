@@ -52,10 +52,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 Project Tagline /Brief Description
 
 > - Badges (Create your own badge)(**change** your **"account"** and **"repository"** with **yours**)
-> - https://pkg.go.dev/github.com/account/repository
-> - https://goreportcard.com/report/github.com/account/repository
+>   - https://pkg.go.dev/github.com/account/repository
+>   - https://goreportcard.com/report/github.com/account/repository
 
-Personal Project of - Neil Medina [ngmedina14@gmail.com](https://github.com/ngmedina14 "ngmedina14@gmail.com") (*Credit Creator*)
+Personal Project of - Neil Medina [ngmedina14@gmail.com](https://github.com/ngmedina14 "ngmedina14@gmail.com")
 
 For Documentation:
 
