@@ -2,7 +2,7 @@
 
 ------------
 
-> #GIT
+> # GIT
 
 # CHANGELOG.md
 
