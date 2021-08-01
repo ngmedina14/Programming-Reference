@@ -191,6 +191,10 @@ declined, etc.
 
 # LICENSE
 
+Tutorial and Selecting your license
+
+[LICENSE TUTORIAL](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository "Adding License")
+
 ------------
 
 
