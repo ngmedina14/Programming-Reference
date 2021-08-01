@@ -55,6 +55,7 @@ Project Tagline /Brief Description
 > - https://pkg.go.dev/github.com/account/repository
 > - https://goreportcard.com/report/github.com/account/repository
 > - https://about.codecov.io
+> - https://travis-ci.org/github/account/repository
 
 Personal Project of - Neil Medina [ngmedina14@gmail.com](https://github.com/ngmedina14 "ngmedina14@gmail.com") (*Credit Creator*)
 
