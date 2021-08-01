@@ -208,5 +208,16 @@ Tutorial and Selecting your license
 
 # .go files
 
+# Function Desciption in go
+
 Todo: discuss about how to add Description in every function and type
 https://blog.golang.org/godoc
+
+
+# Unit Testing Prerequisite and example
+
+Todo: Template for Unit Testing file 
+
+# readthedocs Tutorial (how to publish and update)
+
+Todo: Creation of readthedocs using sphinxbase
