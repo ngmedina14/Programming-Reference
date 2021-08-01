@@ -54,7 +54,7 @@ Project Tagline /Brief Description
 > - Badges (Create your own badge)(**change** your **"account"** and **"repository"** with **yours**)
 > - https://pkg.go.dev/github.com/account/repository
 > - https://goreportcard.com/report/github.com/account/repository
-> - https://about.codecov.io
+> - https://app.codecov.io/gh/account/repository
 > - https://travis-ci.org/github/account/repository
 
 Personal Project of - Neil Medina [ngmedina14@gmail.com](https://github.com/ngmedina14 "ngmedina14@gmail.com") (*Credit Creator*)
