@@ -195,6 +195,10 @@ Tutorial and Selecting your license
 
 [LICENSE TUTORIAL](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository "Adding License")
 
+> Remember !
+> Adding a license means other can get your project or sell your project
+> Not Adding a license means no one can get your project you have the right to sue them
+
 ------------
 
 
