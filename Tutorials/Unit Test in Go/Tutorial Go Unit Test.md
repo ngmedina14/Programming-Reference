@@ -1,5 +1,13 @@
 # Tutorial Go Unit Test (Romnick's Standard)
 
+## filename_test.go
+
+This unit test standard is applicable for custom API especially for pure Go. It might be applicable for some Golang frameworks but this might not be applicable in uAdmin / GORM.
+
+This file should be located next to the Go file that you are testing to. 
+
+Example: **api.go**. This file will be named as **api_test.go**.
+
 **Step 1:** Initialize the example struct.
 
 ```go
@@ -56,6 +64,7 @@ GenerateExcelSalesReportHandler(w, r)
 if w.Code != http.StatusOK {
 	t.Errorf("Invalid code on requesting /. %d", w.Code)
 }
+```
 
 Create a new request there and pass the values from the example struct. Afterwards, pass it into the handler function.
 
@@ -84,3 +93,18 @@ Create a new request there and set the values in the Post Form. Afterwards, pass
 Just copy the code from the first condition.
 
 **Step 5:** Check the results in your terminal.
+
+
+## Run Unit Test
+
+* First of all, create a shell file for unit test.
+
+**test.sh**
+
+```bash
+go test -cover -v -coverprofile=coverage.out; go tool cover -html=coverage.out; rm coverage.out
+```
+
+* To run unit test, open your Terminal and follow these commands below:
+    - cd path_of_where_unit_test_is_located
+    - test.sh
