@@ -93,3 +93,18 @@ Create a new request there and set the values in the Post Form. Afterwards, pass
 Just copy the code from the first condition.
 
 **Step 5:** Check the results in your terminal.
+
+
+## Run Unit Test
+
+* First of all, create a shell file for unit test.
+
+**test.sh**
+
+```bash
+go test -cover -v -coverprofile=coverage.out; go tool cover -html=coverage.out; rm coverage.out
+```
+
+* To run unit test, open your Terminal and follow these commands below:
+    - cd path_of_where_unit_test_is_located
+    - test.sh
