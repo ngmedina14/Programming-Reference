@@ -45,7 +45,7 @@ OtherExampleID string
 
 ## uadmin Custom UI file location
 ###### template/
-- **custom-ui.html**
+- **custom_ui.html**
 
 ###### view/
-- **backend-custom-ui.go**
+- **backend_custom_ui.go**
