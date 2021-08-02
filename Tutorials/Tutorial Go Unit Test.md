@@ -44,7 +44,7 @@ escapeStatus := url.QueryEscape(e.Status)
 
 **Step 4:** Create the condition for the AJAX Method.
 
-First condition: **GET**
+* First condition: **GET**
 
 ```go
 r := httptest.NewRequest(e.Method, fmt.Sprintf(getURL, escapeFrom, escapeTo, escapeStatus), nil)
@@ -59,7 +59,7 @@ if w.Code != http.StatusOK {
 
 Create a new request there and pass the values from the example struct. Afterwards, pass it into the handler function.
 
-Second condition: **POST**
+* Second condition: **POST**
 
 ```go
 r := httptest.NewRequest(e.Method, fmt.Sprintf(postURL), nil)
@@ -79,7 +79,7 @@ if w.Code != http.StatusOK {
 
 Create a new request there and set the values in the Post Form. Afterwards, pass it into the handler function.
 
-Third condition: **INVALID METHOD**
+* Third condition: **INVALID METHOD**
 
 Just copy the code from the first condition.
 
