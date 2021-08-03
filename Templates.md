@@ -208,7 +208,7 @@ Tutorial and Selecting your license
 
 # .go files
 
-# Function Desciption in go
+# Function Description in go
 
 Todo: discuss about how to add Description in every function and type
 https://blog.golang.org/godoc
