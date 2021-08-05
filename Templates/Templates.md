@@ -1,4 +1,4 @@
-# Templates for all repetative format
+# SUMMARY Templates for all repetative format
 
 ------------
 
@@ -212,12 +212,3 @@ Tutorial and Selecting your license
 
 Todo: discuss about how to add Description in every function and type
 https://blog.golang.org/godoc
-
-
-# Unit Testing Prerequisite and example
-
-Todo: Template for Unit Testing file 
-
-# readthedocs Tutorial (how to publish and update)
-
-Todo: Creation of readthedocs using sphinxbase
