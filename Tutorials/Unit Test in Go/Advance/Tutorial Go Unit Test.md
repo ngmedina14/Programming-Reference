@@ -107,4 +107,4 @@ go test -cover -v -coverprofile=coverage.out; go tool cover -html=coverage.out; 
 
 * To run unit test, open your Terminal and follow these commands below:
     - cd path_of_where_unit_test_is_located
-    - test.sh
+    - go test
