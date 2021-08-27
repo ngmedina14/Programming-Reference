@@ -81,3 +81,49 @@ COPY . /container/directory/workdir/Application
 CMD [ "./application" ]
 ```
 
+## Build Docker
+
+```
+sudo docker build -t application-name .
+```
+
+
+## Run Docker
+
+```
+sudo docker run
+```
+
+## Check Image
+
+```
+sudo docker image ls
+```
+
+## Check Image Running
+
+```
+sudo docker ps
+```
+
+## Stop Image Running
+
+```
+sudo docker stop @-NAMES
+```
+
+## Docker hub Setup
+
+> Follow in order
+
+
+```
+sudo docker login
+
+sudo docker build -t dockerid/repository
+
+sudo docker run --name yourname  dockerid/repository
+
+sudo docker push dockerid/repository
+
+```
