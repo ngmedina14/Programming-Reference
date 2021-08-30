@@ -126,6 +126,13 @@ sudo docker image rm -f @-NAMES
 ```
 sudo docker rm -f @-NAMES
 ```
+
+#### Auto Restart the container . unless stopped manually
+
+```
+docker update --restart unless-stopped neilmedina
+```
+
 -------------------------
 
 ## Docker hub Setup
