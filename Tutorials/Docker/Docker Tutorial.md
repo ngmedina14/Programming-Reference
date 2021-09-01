@@ -133,6 +133,68 @@ sudo docker rm -f @-NAMES
 docker update --restart unless-stopped neilmedina
 ```
 
+---------------------
+
+#### Create Volume
+
+```
+docker volume create volume_name
+```
+
+#### List Volume
+
+```
+docker volume ls
+```
+
+#### Volume Details
+
+```
+docker volume inspect volume_name
+```
+
+#### Remove Volume
+
+```
+docker volume rm data_volume
+```
+
+#### Prune Volume / Remove unused volume / any volume that has no connection to any container is deleted
+
+```
+docker volume prune
+```
+
+#### Using Volume
+
+```
+#docker run -v <source/volume_name:<Mount point within the container> app_image
+docker run -v volume_name:/var/opt/project app_image
+```
+
+#### Using --mount
+> The input to -–mount is a string of key-value pairs, separated by commas. Here we've set:
+>
+> - type – as volume to indicate a volume mount
+> - src – to the name of the volume, though this could have been a source directory if we'd been making a bind mount
+> - dst – as the destination mount point in the container
+> - volume-driver – the local driver in this case
+> - readonly – to make this mount read-only; we could have chosen rw for read/write
+```
+docker run --mount \
+  'type=volume,src=data-volume,\
+  dst=/var/opt/project,volume-driver=local,\
+  readonly'
+```
+
+#### Remove Volume
+
+```
+docker volume rm data_volume
+```
+
+
+
 -------------------------
 
 ## Docker hub Setup
