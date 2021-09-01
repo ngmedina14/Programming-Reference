@@ -182,10 +182,7 @@ docker run -v volume_name:/workdir/from/dockerfile app_image
 > - readonly – to make this mount read-only; we could have chosen rw for read/write `ro,rw`
 > - bind propagation - replicate the volume to other location `shared,slave,private,rshared,rslave,rprivate`
 ```
-docker run --mount \
-  'type=volume,src=data-volume,\
-  dst=/var/opt/project,volume-driver=local,\
-  readonly'
+docker run --mount type=<bind,volume,tmpfs>,source=/host/location,target=/WORKDIR/from/Dockerfile
 ```
 
 #### Remove Volume
