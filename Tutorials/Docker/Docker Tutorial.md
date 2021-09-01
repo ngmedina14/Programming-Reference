@@ -175,11 +175,12 @@ docker run -v volume_name:/var/opt/project app_image
 #### Using --mount
 > The input to -–mount is a string of key-value pairs, separated by commas. Here we've set:
 >
-> - type – as volume to indicate a volume mount
+> - type – as volume to indicate a volume mount `bind,volume,tmpfs`
 > - src – to the name of the volume, though this could have been a source directory if we'd been making a bind mount
 > - dst – as the destination mount point in the container
 > - volume-driver – the local driver in this case
-> - readonly – to make this mount read-only; we could have chosen rw for read/write
+> - readonly – to make this mount read-only; we could have chosen rw for read/write `ro,rw`
+> - bind propagation - replicate the volume to other location `shared,slave,private,rshared,rslave,rprivate`
 ```
 docker run --mount \
   'type=volume,src=data-volume,\
