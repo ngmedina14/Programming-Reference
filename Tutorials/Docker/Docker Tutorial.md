@@ -168,8 +168,8 @@ docker volume prune
 #### Using Volume
 
 ```
-#docker run -v <source/volume_name:<Mount point within the container> app_image
-docker run -v volume_name:/var/opt/project app_image
+#docker run -v <source/volume_name:<WORKDIR from Dockerfile> app_image
+docker run -v volume_name:/workdir/from/dockerfile app_image
 ```
 
 #### Using --mount
