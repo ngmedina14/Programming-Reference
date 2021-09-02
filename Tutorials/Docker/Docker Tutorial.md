@@ -141,6 +141,7 @@ sudo docker rm -f @-NAMES
 
 ```
 docker update --restart unless-stopped neilmedina
+docker run --restart=always neilmedina
 ```
 
 ---------------------
