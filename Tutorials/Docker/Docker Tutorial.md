@@ -103,6 +103,13 @@ sudo docker build -t application-name .
 ```
 sudo docker run
 ```
+
+## Run Docker with Privileged , avoid access denied in production
+
+```
+sudo docker run --privileged
+```
+
 ----------------------
 
 > *Common command below*
