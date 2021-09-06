@@ -2,16 +2,18 @@
 
 ## main.go
 	func main(){
-		uadmin.Register
-		uadmin.Settings
-		http.Handle Function
-		uadmin.Custom Translation
-		Functions for push
-		Other Function
-		uadmin.Start Server
+		DBConfig()
+		RegisterModels()
+		RegisterInlines()
+		CustomModelData()
+		PageSettings()
 		}
 
 	func DBConfig()
+	func RegisterModels()
+	func RegisterInlines()
+	func CustomModelData()
+	func PageSettings()
 
 
 ------------
