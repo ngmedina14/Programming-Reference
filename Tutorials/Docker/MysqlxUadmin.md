@@ -34,6 +34,11 @@ services:
     #   #dockerfile: Dockerfile.local
     privileged: true
     image: ngmedina14/ordering-system
+    environment: 
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=NeilGwapo100%
+      - MYSQL_ROOT_HOST=%
+      - MYSQL_DATABASE=ordering-system
     ports:
       - "8080:8080"
     volumes:
@@ -82,12 +87,12 @@ func main() {
 func DBConfig() {
 	// Change DB Setting to MySQL
 	uadmin.Database = &uadmin.DBSettings{
-		Type: "mysql",
-		Host: "orderingsystem_mysql_1", #Name of Mysql Container
-		Name:     "ordering-system", #Name of the database
-		User:     "root", # required
-		Password: "NeilGwapo100%",# required
-		Port:     3306, # Port of the Mysql Container
+		Type:     "mysql",
+		Host:     os.Getenv("MYSQL_ROOT_HOST"), # Environtment Value is Located at .docker-compose.yml
+		Name:     os.Getenv("MYSQL_DATABASE"),
+		User:     os.Getenv("MYSQL_USER"),
+		Password: os.Getenv("MYSQL_ROOT_PASSWORD"),
+		Port:     3306,
 	}
 }
 
@@ -105,7 +110,7 @@ volumes:
   WebBindVolume:
     driver_opts:
         type: none
-        device: ${PWD} # your wanted location or present working directory
+        device: ${PWD} # your wanted App location or App present working directory
         o: bind
   MysqlBindVolume:
     driver_opts:
