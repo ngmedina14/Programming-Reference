@@ -23,8 +23,8 @@ services:
     expose:
       - "3306"
     environment: 
-      MYSQL_ROOT_PASSWORD: "NeilGwapo100%"
-      MYSQL_ROOT_HOST: "%"
+      MYSQL_ROOT_PASSWORD: "NeilGwapo100%" #should match with app Database Config
+      MYSQL_ROOT_HOST: "%" #Go to my reference https://github.com/docker-library/mysql/issues/275
     volumes: 
       - MysqlBindVolume:/var/lib/mysql
     restart: always
