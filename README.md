@@ -1,20 +1,39 @@
 # Best Practices for uadmin code setup
 
 ## main.go
-	func main(){
-		DBConfig()
-		RegisterModels()
-		RegisterInlines()
-		CustomModelData()
-		PageSettings()
-		}
+```go
+func main(){
+	DBConfig()
+	RegisterModels()
+	RegisterInlines()
+	PageHandlers()
+	WebSockets()
+	CustomModelData()
+	PageSettings()
+	}
 
-	func DBConfig()
-	func RegisterModels()
-	func RegisterInlines()
-	func CustomModelData()
-	func PageSettings()
+func DBConfig(){
+}
 
+func RegisterModels(){
+}
+
+func RegisterInlines(){
+}
+
+func PageHandlers(){
+}
+
+func WebSockets(){
+}
+
+func CustomModelData(){
+}
+
+func PageSettings(){
+}
+
+```
 
 ------------
 
