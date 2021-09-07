@@ -1,0 +1,119 @@
+# Docker Swarm Tutorial
+
+
+## Important things in docker-compose.yml
+----------------
+> No build feature for docker swarm means you need to use Image to run
+`image: ngmedina14/ordering-system`
+
+#### yaml version
+the host port will only work if the yaml version is 3.5 or latest
+
+```yaml
+version: "3.5" 
+````
+
+#### Port configuration
+
+##### You dont need to expose mysql port. they are living in a single instance/pc
+```yaml
+  mysql:
+    image: mysql/mysql-server:8.0.26
+    #ports:
+    #  - "3306:3306"
+```
+
+##### Make the Web app the _Host Port_ and published port
+
+```yaml
+ports:
+      - target: 8080
+        published: 8080
+        mode: host # the most important thing about docker swarm
+``` 
+
+#### Make sure to change Database Host to the Service Name
+
+Use this command
+`docker service ls`
+
+```yaml
+    environment: 
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=NeilGwapo100%
+      - MYSQL_ROOT_HOST=orderingsystem_mysql #Change this based on the mysql Service Name
+      - MYSQL_DATABASE=ordering-system
+```
+
+```yaml
+version: "3.5"  # optional since v1.27.0
+services:
+  mysql:
+    image: mysql/mysql-server:8.0.26
+    #ports:
+    #  - "3306:3306"
+    environment: 
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: "NeilGwapo100%"
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: "ordering-system"
+    volumes: 
+      #- /var/lib/mysql:/var/lib/mysql #Docker Play Setup Only
+      - MysqlBindVolume:/var/lib/mysql
+    #restart: always
+  web:
+    # build: 
+    #   context: . #Dockerfile
+    # #   #dockerfile: Dockerfile.local
+    #privileged: true
+    image: ngmedina14/ordering-system
+    environment: 
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=NeilGwapo100%
+      - MYSQL_ROOT_HOST=orderingsystem_mysql
+      - MYSQL_DATABASE=ordering-system
+    ports:
+      - target: 8080
+        published: 8080
+        mode: host
+
+    volumes:
+      - WebBindVolume:/go/src/github.com/OrderingSystem
+    #restart: unless-stopped
+    depends_on: 
+      - mysql
+volumes:
+  WebBindVolume:
+    driver_opts:
+        type: none
+        device: ${PWD} #/home/neil/go/src/github.com/ngmedina14/OrderingSystem
+        o: bind
+  MysqlBindVolume:
+    driver_opts:
+        type: none
+        device: ${PWD}/data #/home/neil/go/src/github.com/ngmedina14/OrderingSystem
+        o: bind
+    
+```
+
+# Running Docker Swarm
+
+## Join/ Create swarm init first
+`docker swarm init #host pc`
+###### if practicing swarm in playgroud use this
+`docker swarm init --advertise-addr 127.0.0.1 #play with docker`
+
+## Create a node
+>Hint! replace the <nodeappname> to appname .. mysql host name is dependent to the appname
+> Ex. orderingsystem
+> then my  - MYSQL_ROOT_HOST=_orderingsystem_mysql_
+`docker stack deploy -c docker-compose.yml <nodeappname>`
+
+###### Service Status
+`docker service ls`
+
+###### Start Over Node / Remove Node
+docker stack rm <nodeappname>
+
+###### Start Over Swarm / Leave Swarm
+docker swarm leave -f
