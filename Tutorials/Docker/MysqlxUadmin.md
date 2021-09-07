@@ -26,6 +26,7 @@ services:
       MYSQL_ROOT_PASSWORD: "NeilGwapo100%" #should match with app Database Config
       MYSQL_ROOT_HOST: "%" #Go to my reference https://github.com/docker-library/mysql/issues/275
     volumes: 
+      #- /var/lib/mysql:/var/lib/mysql #Docker Play Setup Only
       - MysqlBindVolume:/var/lib/mysql
     restart: always
   web:
