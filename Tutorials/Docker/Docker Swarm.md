@@ -1,5 +1,7 @@
 # Docker Swarm Tutorial
 
+#### Reference
+https://www.youtube.com/watch?v=3-7gZS4ePak
 
 ## Important things in docker-compose.yml
 ----------------
@@ -104,16 +106,32 @@ volumes:
 `docker swarm init --advertise-addr 127.0.0.1 #play with docker`
 
 ## Create a node
->Hint! replace the <nodeappname> to appname .. mysql host name is dependent to the appname
-> Ex. orderingsystem
-> then my  - MYSQL_ROOT_HOST=_orderingsystem_mysql_
+>Hint! replace the <nodeappname> to appname .. mysql host name is dependent to the appname<br>
+> Ex. orderingsystem<br>
+> then my  `- MYSQL_ROOT_HOST=_orderingsystem_mysql_`
+  
+###### Create node
 `docker stack deploy -c docker-compose.yml <nodeappname>`
 
 ###### Service Status
 `docker service ls`
 
+-----------------------
+  
 ###### Start Over Node / Remove Node
-docker stack rm <nodeappname>
+`docker stack rm <nodeappname>`
 
 ###### Start Over Swarm / Leave Swarm
-docker swarm leave -f
+`docker swarm leave -f`
+  
+###### Scale Application / Replica / Load balancer
+`docker service scale <nodeapp_service>=<replica count>`
+`docker service scale orderingsystem_web=3`
+ 
+###### Monitor Service Application / App Replica
+`docker service ps <nodeapp_service>`
+`docker service ps orderingsystem_web`
+  
+###### Monitor Swarm Network
+`docker node ls`
+  
