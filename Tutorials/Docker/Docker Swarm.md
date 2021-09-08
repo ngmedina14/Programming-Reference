@@ -79,6 +79,11 @@ services:
     # #   #dockerfile: Dockerfile.local
     #privileged: true
     image: ngmedina14/ordering-system
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1 #Replace 1 task at a time
+        delay: 10s
     environment: 
       - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=NeilGwapo100%
