@@ -31,10 +31,10 @@ version: "3.5"
 ports:
       - target: 8080
         published: 8080
-        mode: host # the most important thing about docker swarm
+        mode: host # the most important thing about docker swarm /Means Select 1 service 
 ``` 
 
-#### Make sure to change Database Host to the Service Name
+##### Make sure to change Database Host to the Service Name
 
 Use this command
 `docker service ls`
@@ -45,6 +45,16 @@ Use this command
       - MYSQL_ROOT_PASSWORD=NeilGwapo100%
       - MYSQL_ROOT_HOST=orderingsystem_mysql #Change this based on the mysql Service Name
       - MYSQL_DATABASE=ordering-system
+```
+
+##### Replication of Service/ Running Application to minimize downtime
+
+```yaml
+deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1 #Replace 1 task at a time
+        delay: 10s
 ```
 
 ```yaml
@@ -134,4 +144,10 @@ volumes:
   
 ###### Monitor Swarm Network
 `docker node ls`
+
+###### Run a docker Vizualizer For Visual Monitoring of Nodes
   
+> Make sure you run this on the Swarm Manager VM/PC/Host
+
+  
+`docker service create --name=viz --publish=8000:8080/tcp --constraint=node.role==manager --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock dockersamples/visualizer`
