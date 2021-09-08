@@ -142,17 +142,41 @@ volumes:
 ###### Scale Application / Replica / Load balancer
 `docker service scale <nodeapp_service>=<replica count>`
 `docker service scale orderingsystem_web=3`
- 
-###### Monitor Service Application / App Replica
-`docker service ps <nodeapp_service>`
-`docker service ps orderingsystem_web`
-  
-###### Monitor Swarm Network
-`docker node ls`
 
+  
 ###### Run a docker Vizualizer For Visual Monitoring of Nodes
   
 > Make sure you run this on the Swarm Manager VM/PC/Host
 
   
 `docker service create --name=viz --publish=8000:8080/tcp --constraint=node.role==manager --mount=type=bind,src=/var/run/docker.sock,dst=/var/run/docker.sock dockersamples/visualizer`
+  
+-------------------
+  
+# Swarm
+  
+###### Monitor Swarm Network
+`docker node ls`
+  
+###### Drain Swarm / Remove nodes in the VM/PC and place it to other VM/PC
+  
+`docker node update --availability=drain <VM/PC Name`
+  
+                                         
+###### Active Swarm / Activate a previously Drain Swarm / Nodes can now run in the VM/PC
+
+`docker node update --availability=active <VM/PC Name>` 
+
+> Force the services or nodes go back and run to the VM/PC assigned originaly
+
+  
+`docker service update --force <nodeapp_service>`
+                                         
+---------------------  
+  
+# Service
+ 
+###### Monitor Service Application / App Replica
+`docker service ps <nodeapp_service>`
+`docker service ps orderingsystem_web`
+  
