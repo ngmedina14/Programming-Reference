@@ -49,3 +49,15 @@ https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-kubectl-bi
 ##### Apply edited kubernate config file
 `kubectl apply -f /path/conf.yml`
 
+##### Start a Minikube /create a VM for kube manager
+`minikube start`
+
+##### Delete a node
+`kubectl delete -f k8s/`
+
+##### Delete the Minikube / VM
+`minikube delete`
+
+##### Stop a Minikube / stop the process of the VM
+`minikube stop`
+
