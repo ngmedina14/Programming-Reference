@@ -35,7 +35,7 @@ tunnel: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee
 credentials-file: /home/<yours>/.cloudflared/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee.json
 
 ingress:
-        - service: http://35.197.134.241
+        - service: http://localhost
           originRequest:
           originServerName: mismastermaker.com
 ```
