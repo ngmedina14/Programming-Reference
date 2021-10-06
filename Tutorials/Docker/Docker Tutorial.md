@@ -237,3 +237,8 @@ sudo docker run -d -p 8080:8080 --name yourname  dockerid/repository
 ```
 sudo docker push dockerid/repository
 ```
+
+#### Manage Docker as a non-root user
+
+`sudo groupadd docker`
+`sudo usermod -aG docker $USER`
