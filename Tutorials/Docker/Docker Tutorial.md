@@ -240,5 +240,13 @@ sudo docker push dockerid/repository
 
 #### Manage Docker as a non-root user
 
-`sudo groupadd docker`
-`sudo usermod -aG docker $USER`
+```
+sudo groupadd docker
+```
+
+```
+sudo usermod -aG docker $USER
+```
+```
+su - ${USER}
+```
