@@ -45,9 +45,7 @@ app.listen(port,()=>{
 ---------------------------
 User.js
 ```javascript
-const { response } = require('express');
 const express = require('express');
-const { request } = require('http');
 const router = express.Router();//essential to get the POST and GET method
 
 router.get('/fetch',(request,response)=>{
