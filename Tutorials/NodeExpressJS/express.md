@@ -12,6 +12,8 @@
 > - `npm install express --save-dev` Node.js web application framework that provides a robust set of features for web and mobile applications.
 > - `npm install mysql2`Fast mysql driver. Implements core protocol, prepared statements, ssl and compression in native JS, made for mysql 8.0 to latest
 > - `npm install express-handlebars` Template. The constructor function which holds the internal implementation on its prototype.
+> - `npm install dotenv --save` Loads environment variables from .env file.
+> - `npm install hbs` Express.js template engine plugin for Handlebars.
 
 
 ### File Structure
