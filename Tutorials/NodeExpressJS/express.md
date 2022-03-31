@@ -3,7 +3,6 @@
 ### Preparation
 
 - Create a proj folder
-- create a file  name  `index.js`
 - Initialize and configure npm `npm init`
 - Install dependencies
 
@@ -20,11 +19,20 @@
 ### File Structure
 ```
 Project-Folder
-  ├── node_modules
-  ├── routes
-  │   └── User.js
-  ├── index.js
-  ├── package.json
+  ├── controllers  ---------- < handlers for all transactions
+  │   └── authAccount.js  --- < transaction for users account and validate inputs
+  ├── node_modules  --------- < all dependencies is saved here
+  ├── routes  --------------- < API or redirections or display page 
+  │   ├── Auth.js  ---------- < redirection of all transaction
+  │   └── PageRoutes.js  ---- < navigate pages
+  ├── views  ---------------- < HTML template or handlebars 
+  │   ├── list.hbs
+  │   ├── login.hbs
+  │   ├── profile.hbs
+  │   └── registration.hbs
+  ├── .env  ----------------- < database environtment values
+  ├── app.js  --------------- < main file
+  ├── package.json  --------- < application configurations
   └── package-lock.json
 ```
 
