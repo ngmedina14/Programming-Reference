@@ -14,6 +14,7 @@
 > - `npm install express-handlebars` Template. The constructor function which holds the internal implementation on its prototype.
 > - `npm install dotenv --save` Loads environment variables from .env file.
 > - `npm install hbs` Express.js template engine plugin for Handlebars.
+> - `npm i bcrypt` Hash and verify passwords 
 
 
 ### File Structure
