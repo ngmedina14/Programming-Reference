@@ -35,47 +35,16 @@ Project-Folder
   ├── package.json  --------- < application configurations
   └── package-lock.json
 ```
+### Database Schema
 
-### Sample code
+- Database : application
+- Table    : users
+- Fields   : `user_id`, `first_name`, `last_name`, `email`, `password`
 
-index.js
-```javascript
-const express = require('express');
-const app = express();
-const port = 2000;
+![Schema](database.png)
 
-app.use(express.json())
-const userRoutes = require('./routes/User')
 
-app.use('/users',userRoutes)
 
-app.listen(port,()=>{
-    console.log("Server Started")
-})
-```
----------------------------
-User.js
-```javascript
-const express = require('express');
-const router = express.Router();//essential to get the POST and GET method
 
-router.get('/fetch',(request,response)=>{
-    // response.send("list of users");
-    // response.json({
-    //     name:"Neil",
-    //     gender:"male",
-    // })
-    response.send(request.query);
-});
-router.post('/insert',(request,response)=>{
-    // res.json({
-    //     message:"test"
-    // })
-    console.log(request.body);
-    response.send(request.headers);
-})
-
-module.exports = router;
-```
 ### Run the App
 `nodemon app.js`
