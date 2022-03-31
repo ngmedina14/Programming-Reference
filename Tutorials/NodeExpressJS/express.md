@@ -69,3 +69,5 @@ router.post('/insert',(request,response)=>{
 
 module.exports = router;
 ```
+### Run the App
+`nodemon app.js`
