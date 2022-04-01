@@ -18,6 +18,17 @@
 > - `npm install hbs` Express.js template engine plugin for Handlebars.
 > - `npm i bcrypt` Hash and verify passwords 
 
+#### Source Codes
+
+- [app.js](#appjs)
+- [PageRoutes.js](#pageroutesjs)
+- [Auth.js](#authjs)
+- [authAccount.js](#authaccountjs)
+- [list.hbs](#listhbs)
+- [login.hbs](#loginhbs)
+- [profile.hbs](#profilehbs)
+- [registration.hbs](#registrationhbs)
+
 
 ### File Structure
 ```
@@ -38,6 +49,7 @@ Project-Folder
   ├── package.json  --------- < application configurations
   └── package-lock.json
 ```
+
 ### Database Schema
 
 - Database : `application`
@@ -45,6 +57,62 @@ Project-Folder
 - Fields   : `user_id`, `first_name`, `last_name`, `email`, `password`
 
 ![Schema](database.png)
+
+### Code Snippets
+- [Creating a Server](#creating-a-server)
+
+### Procedures
+
+After the preparation is done. We can start [Setting up a server](#creating-a-server) in the main file(**app.js**).
+
+Now *Create a new File - **[app.js](#appjs)***
+
+> Expected File Structure after the preparation and Adding a new file **app.js** 
+> ```
+> Project-Folder
+>  ├── node_modules  --------- < all dependencies is saved here
+>  ├── app.js  --------------- < main file
+>  ├── package.json  --------- < created from `npm init`
+>  └── package-lock.json  ---- < created from installing dependencies
+> ```
+
+
+
+### Snippets
+
+##### Creating a Server
+
+in main file ([app.js](#appjs))
+
+> NOTE:
+> 
+> method listen has 2 parameter
+> 
+> listen(**port**, **callback function**)
+
+```javascript
+const express = require('express'); // Import express framework
+const app = express(); // Instantiate Express JS to a variable
+const port = 3001 // Port for the server
+
+// setting up the server
+app.listen(port,()=>{
+    console.log("Server Started http://localhost:"+port)
+})
+```
+
+
+### Code Source
+
+###### .env
+
+```
+DATABASE = application
+DATABASE_HOST = localhost
+DATABASE_USER = root
+DATABASE_PASSWORD = localpassword
+DATABASE_PORT =  3306
+```
 
 ###### app.js
 
@@ -200,16 +268,6 @@ exports.delete = (req,res) =>{
         (error, row)=>{ (error) ? console.log(error) : res.status(401).render('list',{users:row})})
   })
 }
-```
-
-###### .env
-
-```
-DATABASE = application
-DATABASE_HOST = localhost
-DATABASE_USER = root
-DATABASE_PASSWORD = localpassword
-DATABASE_PORT =  3306
 ```
 
 ###### login.hbs
